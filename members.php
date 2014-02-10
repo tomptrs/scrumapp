@@ -14,7 +14,7 @@ class Member
 	
 	public function GetData()
 	{
-		$sql = "SELECT * FROM members";
+		$sql = "SELECT * FROM Member";
 		$this->db->query($sql);		
 		
 		$json = array();
