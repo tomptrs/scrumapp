@@ -9,7 +9,7 @@ header('Content-Type: application/json');
 //$json = array();
 $str = $m->GetData();
 
-print $str;
+print "test";//$str;
 
 //TRY TO SEND JSON DATA!
 
