@@ -26,7 +26,7 @@ class Member
 			//$json[] = $line;
 			
 		}
-		print "end";
+		
 			//print $json[0];
 		//	return json_encode($json);	
 

@@ -2,12 +2,13 @@
 
 require_once "members.php";
 $m = new Member();			
-print "test";
+
 //header('Content-Type: application/json');
 //$json = array();
 $str = $m->GetData();
 
-print "test ";//$str;
+print $str;
+
 
 //TRY TO SEND JSON DATA!
 
