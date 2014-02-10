@@ -18,6 +18,7 @@ class Member
 		$this->db->query($sql);		
 		
 		$json = array();
+		print "ok";
 		while ($line = $this->db->fetchArray() )
 		{
 		print ' <a href="#" class="list-group-item">'.$line[1] . ' ' . $line[2].'</a>';
