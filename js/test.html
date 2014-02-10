@@ -1,0 +1,157 @@
+<!DOCTYPE HTML>
+<html  lang="en">
+<head>
+<title>html 5 drag and drop</title>
+
+<link  rel="stylesheet" href="css/style.css"  type="text/css" />
+
+<!-- 1 / Voeg JQUERY Library toe -->
+<script type="text/javascript" src="jquery-ui-1.9.2.custom\jquery-ui-1.9.2.custom\js\jquery-1.8.3.js"></script>
+<script type="text/javascript" src="jquery-ui-1.9.2.custom\jquery-ui-1.9.2.custom\js\jquery-ui-1.9.2.custom.js"></script>
+
+<script type="text/javascript">
+ $(document).ready(function() {
+	$trash = $( ".dropzonedoing" );
+	$(".draggable").draggable({ revert: true });
+	$("#test").draggable();
+	$( ".draggable2" ).draggable({
+				helper: function() {
+					return $( "<div class='dynamic'>Dynamic element</div>" );
+					}});
+					
+	$("#dropzone").droppable({
+      drop: function( event, ui ) {
+	     
+		 //set text to dropzone..
+		 $( "#dropzone" ).append( "<p>" + ui.draggable.attr("id") + "</p>" );
+	  }});
+	  
+	  $(".dropzonedoing").droppable({
+      drop: function( event, ui ) {
+	     
+		 //set text to dropzone..
+		 $( "#dropzone" ).append( "<p>" + ui.draggable.attr("id") + "</p>" );
+		 deleteImage(ui.draggable);
+	  }});
+
+ 
+	  
+ });
+
+  function deleteImage( $item ) {
+  	
+      $item.fadeOut(function() {
+       
+
+       $item.fadeIn(function()
+       {
+       //	alert($item);
+       	
+       });
+       $(".dropzonedoing").append($item);
+//        $item.append( ".dropzonedoing" );
+        /*.appendTo( $list ).fadeIn(function() {
+          $item
+            .animate({ width: "48px" })
+            .find( "img" )
+              .animate({ height: "36px" });
+        });*/
+      });
+    }
+</script>
+<style>
+	#doing,#todo,#done,#reviewing
+	{
+		float:left;
+		width:300px;
+		border-left: 1px dashed black;
+	}
+</style>
+</head>
+<body>
+	
+	<header class="floatfix">
+		<h1><a href="/"><img src="img/logo.gif" alt="Get Shirty" /></a></h1>
+		<img id="phone" src="img/phone.gif" alt="Order by Phone - 0800 000 000" />
+		
+		<nav class="floatfix">
+			<ul>
+	 			<li><a href="#">Home</a></li>
+	    		<li><a href="#">Special Offers</a></li>
+		        <li><a href="#">Log In</a></li>
+	        	<li><a href="#">Account</a></li>
+				<li><a href="#">Basket</a></li>
+				<li><a href="#">Checkout</a></li>
+			</ul>
+		</nav>
+	</header>
+
+	<section id="content">
+		<div id="test">test</div>
+		<div id="todo">
+			todo
+			
+			<ul id="items">
+		 <li id="white" class="draggable">Plain White Tshirt</li>
+		 <li id="pink" class="draggable">Plain Pink Tshirt</li>
+		 <li id="blue" class="draggable">Plain Blue Tshirt</li>
+		
+		 <li id="green" class="draggable">Plain Green Tshirt</li>
+		 <li id="grey" class="draggable">Plain Grey Tshirt</li>
+		 <li id="yellow" class="draggable2">Plain Yellow Tshirt</li>
+		</ul>
+		</div>
+			<div id="doing" class="dropzonedoing">
+			doing
+			<ul id="items">
+		 <li id="white" class="draggable">Plain White Tshirt</li>
+		 <li id="pink" class="draggable">Plain Pink Tshirt</li>
+		 <li id="blue" class="draggable">Plain Blue Tshirt</li>
+		
+		 <li id="green" class="draggable">Plain Green Tshirt</li>
+		 <li id="grey" class="draggable">Plain Grey Tshirt</li>
+		 <li id="yellow" class="draggable2">Plain Yellow Tshirt</li>
+		</ul>
+		</div>
+			<div id="reviewing">
+			reviewing
+			
+		</div>
+			<div id="done">
+			done
+		
+		</div>
+		
+		<ul id="items">
+		 <li id="white" class="draggable">Plain White Tshirt</li>
+		 <li id="pink" class="draggable">Plain Pink Tshirt</li>
+		 <li id="blue" class="draggable">Plain Blue Tshirt</li>
+		
+		 <li id="green" class="draggable">Plain Green Tshirt</li>
+		 <li id="grey" class="draggable">Plain Grey Tshirt</li>
+		 <li id="yellow" class="draggable2">Plain Yellow Tshirt</li>
+		</ul>
+	</section>
+	
+	
+	<aside >
+		<h2>Shopping Cart</h2>
+		
+		<dl id="dropzone" class="dropzone floatfix">
+		
+		</dl>
+		
+		<p>Drag your items into the box above to add them to your basket
+		<ul><li>test</li></ul>
+		</p>
+		<a id="checkout" href="#">Proceed to Checkout</a>
+	</aside>
+	
+	<footer>
+		<a href="http://www.ki-media.co.uk">Web Design by Ki Media</a>
+	</footer>
+
+	
+	
+</body>
+</html>
