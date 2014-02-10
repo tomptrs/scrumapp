@@ -2,12 +2,12 @@
 
 <?php
 
-require "members.php";
-$m = new Member();			
+//require "members.php";
+//$m = new Member();			
 			print "test";
-header('Content-Type: application/json');
+//header('Content-Type: application/json');
 //$json = array();
-$str = $m->GetData();
+//$str = $m->GetData();
 
 print "test ";//$str;
 
