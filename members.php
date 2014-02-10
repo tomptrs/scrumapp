@@ -20,7 +20,7 @@ class Member
 		$json = array();
 		while ($line = $this->db->fetchArray() )
 		{
-		print ' <a href="#" class="list-group-item">'.$line[1] $line[2].'</a>';
+		print ' <a href="#" class="list-group-item">'.$line[1] . ' ' . $line[2].'</a>';
 			//$json[] = $line;
 			
 		}
@@ -32,8 +32,8 @@ class Member
 	public function InsertUserInDB($name)
 	{
 		//INSERT INTO `gocha`.`User` (`Name`, `ID`) VALUES (\'tom\', NULL);
-		$sql = "insert into User('Name','ID') VALUES ('{$name}',NULL);	
-		$this->db->query($sql);	
+		//$sql = "insert into User('Name','ID') VALUES ('{$name}',NULL);	
+		//$this->db->query($sql);	
 	}
 	
 	

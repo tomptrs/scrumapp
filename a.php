@@ -1,10 +1,8 @@
-
-
 <?php
 
 require_once "members.php";
 $m = new Member();			
-			print "test";
+print "test";
 //header('Content-Type: application/json');
 //$json = array();
 //$str = $m->GetData();
