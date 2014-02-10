@@ -21,8 +21,8 @@ class Member
 		
 		while ($line = $this->db->fetchArray() )
 		{
-		print $line[0];
-//		print ' <a href="#" class="list-group-item">'.$line[1] . ' ' . $line[2].'</a>';
+		//print $line[0];
+		print ' <a href="#" class="list-group-item">'.$line[1] . ' ' . $line[2].'</a>';
 			//$json[] = $line;
 			
 		}
