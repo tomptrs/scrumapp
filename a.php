@@ -2,7 +2,7 @@
 
 <?php
 
-require "members.php";
+require_once "members.php";
 $m = new Member();			
 			print "test";
 //header('Content-Type: application/json');
