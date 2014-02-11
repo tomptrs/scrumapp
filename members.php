@@ -21,7 +21,9 @@ class Member
 		$teller = 0;
 		while ($line = $this->db->fetchArray() )
 		{
-			//$json[$teller] = "
+			$json[$teller] = array("Name"=> $line[1],
+									"FirstName"=> $line[2]
+									);
 			$teller++;
 		//print $line[0];
 //		print ' <a href="#" class="list-group-item">'.$line[1] . ' ' . $line[2].'</a>';
@@ -46,7 +48,7 @@ class Member
         "price" => "valore2"
     )
 );
-	return $arr;
+	return $json;
 	}
 	
 	public function InsertUserInDB($name)
