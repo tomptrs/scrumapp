@@ -31,7 +31,21 @@ class Member
 		
 			//print $json[0];
 		//	return json_encode($json);	
-	$arr = array('a' => 1, 'b' => 2, 'c' => 3, 'd' => 4, 'e' => 5);
+	//$arr = array('a' => 1, 'b' => 2, 'c' => 3, 'd' => 4, 'e' => 5);
+	$arr = array(
+    array(
+        "region" => "valore",
+        "price" => "valore2"
+    ),
+    array(
+        "region" => "valore",
+        "price" => "valore2"
+    ),
+    array(
+        "region" => "valore",
+        "price" => "valore2"
+    )
+);
 	return $arr;
 	}
 	
