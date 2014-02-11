@@ -21,13 +21,13 @@ class Member
 		$teller = 0;
 		while ($line = $this->db->fetchArray() )
 		{
-			$json[$teller] = array("Name"=> $line[1],
-									"FirstName"=> $line[2]
+			$json[$teller] = array(	"Id" => $line[0],
+									"Name" => $line[1],
+									"FirstName" => $line[2],
+									"Email" => $line[3]
 									);
 			$teller++;
-		//print $line[0];
-//		print ' <a href="#" class="list-group-item">'.$line[1] . ' ' . $line[2].'</a>';
-			//$json[] = $line;
+		
 			
 		}
 		
