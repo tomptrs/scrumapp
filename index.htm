@@ -83,13 +83,12 @@
 		{
 			type:"GET",
 			url:"http://ec2-54-213-66-92.us-west-2.compute.amazonaws.com/scrum/scrumapp/a.php",
-			//url:"hybridauth-2.1.2\\hybridauth\\test.php",
-			
 			
 			success:function(data,status)
-			{			
-				$(".drag").append(data);
-				$(".drag").draggable();
+			{		
+				alert(data);
+				//$(".drag").append(data);
+				//$(".drag").draggable();
 				//Parse a JSON ARRAY
 				/*var str = "<ul>";
 				for (var i = 0; i < data.length; i++) {
@@ -108,6 +107,7 @@
 			 error: function (xhr, ajaxOptions, thrownError) {
 				//alert(xhr.status);
 				//alert(thrownError);
+				alert("error");
 			}
 		});
 	  
