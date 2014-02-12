@@ -94,7 +94,15 @@
 	 
 	   $.getJSON('getteams.php', function(data) {
                         /* data will hold the php array as a javascript object */
-                        /*$.each(data, function(key, val) {
+                        
+						 json= data;
+						for (var key in json) {
+							if (json.hasOwnProperty(key)) {
+								var item = json[key];
+								$('.dropdown-menu').append("<li> <a href='#' onclick='SelectTeam(".item.Id.")'>" + item.Name + "</a></li>");
+							}
+						}
+						/*$.each(data, function(key, val) {
                                 $.each(val, function (i, d) {
 									alert(d.Id);
 									//$('.dropdown-menu').append("<li> <a href='#' onclick='SelectTeam(".val.Id.")'>" + val.Name + "</a></li>");
@@ -103,17 +111,8 @@
 							   //
 								
                
-                        });*/
-						/*for (var i in data) {
-							for (var j in data[i]) {
-								alert(data[i][j]);
-							}
-						}*/
-						 json= data;
-for (var key in json) {
-    if (json.hasOwnProperty(key)) {
-    var item = json[key];
-    alert(item.Id); }}
+                        });
+						
         
 						
 						
