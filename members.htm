@@ -98,8 +98,11 @@
 						 json= data;
 						for (var key in json) {
 							if (json.hasOwnProperty(key)) {
-						var item = json[key];
-    alert(item.Id); alert(item.Name); }}
+									var item = json[key];
+									//alert(item.Id); alert(item.Name); 	
+									$('.dropdown-menu').append("<li> <a href='#' onclick='SelectTeam(".item.Id.")'>" + item.Name + "</a></li>");
+						}
+						}
 						/*$.each(data, function(key, val) {
                                 $.each(val, function (i, d) {
 									alert(d.Id);
