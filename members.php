@@ -39,10 +39,10 @@ class Member
 		$teller = 0;
 		while ($line = $this->db->fetchArray() )
 		{
-			$json[$teller] = array(	"Id" => 1,
-									"Name" => "Peeters",
-									"FirstName" => "Tom",
-									"Email" => "tom.peeters@ap.be"
+			$json[$teller] = array(	"Id" => $line[0],
+									"Name" => $line[1],
+									"FirstName" => $line[2],
+									"Email" => $line[3]
 									);
 			$teller++;
 		}		
