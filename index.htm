@@ -49,7 +49,7 @@
 	$(document).ready(function()
 	{
 	
-	$(".drag div").draggable({ revert: true });
+		$(".drag div").draggable({ revert: true });
 	
 	
 	
@@ -82,29 +82,27 @@
 	  $.ajax(
 		{
 			type:"GET",
-			url:"http://ec2-54-213-66-92.us-west-2.compute.amazonaws.com/scrum/scrumapp/a.php",
+			url:"http://localhost/scrum/a.php",
+			//url:"hybridauth-2.1.2\\hybridauth\\test.php",
+			
 			
 			success:function(data,status)
-			{		
-				alert(data);
-				var str = "";
+			{			
 				
+				//Parse a JSON ARRAY
 				for (var i=0; i<data.length; i++)
-    for (var name in data[i]) {
+					for (var name in data[i]) 
+						alert(name);
         
-         $("#json").append("Source: "+data[i]["Name"]);
+//						$("#json").append("Source: "+data[i]["Name"]);
         
-    }
-				
-				
-				//$(".drag").append(data);
-				//$(".drag").draggable();
-				
+				//}	
+	
+	
   			},
 			 error: function (xhr, ajaxOptions, thrownError) {
 				//alert(xhr.status);
 				//alert(thrownError);
-				alert("error");
 			}
 		});
 	  

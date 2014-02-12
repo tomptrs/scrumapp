@@ -3,7 +3,7 @@
 
 require_once "db.php";
 
-class Member
+class Iteration
 {
 	private $db;
 	
@@ -22,32 +22,21 @@ class Member
 		//while ($line = $this->db->fetchArray() )
 		//{
 			$json[$teller] = array(	"Id" => 1,
-									"Name" => "Peeters",
-									"FirstName" => "Tom",
-									"Email" => "tom.peeters@ap.be"
+									"Name" => "Sprint 1",
+									
 									);
 			$teller++;
+			$json[$teller] = array(	"Id" => 2,
+									"Name" => "Sprint 2",
+									
+									);
 		
 			
 		//}
 		
-			//print $json[0];
-		//	return json_encode($json);	
-	//$arr = array('a' => 1, 'b' => 2, 'c' => 3, 'd' => 4, 'e' => 5);
-	$arr = array(
-    array(
-        "region" => "valore",
-        "price" => "valore2"
-    ),
-    array(
-        "region" => "valore",
-        "price" => "valore2"
-    ),
-    array(
-        "region" => "valore",
-        "price" => "valore2"
-    )
-);
+		
+		
+	
 	return $json;
 	}
 	
