@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="">
-    <meta name="author" content="">
+    <meta name="author" content="Tom Peeters">
     <link rel="shortcut icon" href="http://getbootstrap.com/assets/ico/favicon.ico">
 
     <title>Scrum dashboard</title>
@@ -50,20 +50,19 @@
 	$(document).ready(function()
 	{
 	
-		$(".drag div").draggable({ revert: true });
+		$(".drag div").draggable({ revert: true });	
 	
 	
-	
-	 $("#dropzonetodo").droppable({
-      drop: function( event, ui ) {
-		dropit(ui.draggable,"#dropzonetodo");	 		
-	  }});
+		$("#dropzonetodo").droppable({
+			drop: function( event, ui ) {
+			dropit(ui.draggable,"#dropzonetodo");	 		
+		}});
 	  
-	   $("#dropzonereview").droppable({
-      drop: function( event, ui ) {
-		dropit(ui.draggable,"#dropzonereview");
+		$("#dropzonereview").droppable({
+			drop: function( event, ui ) {
+			dropit(ui.draggable,"#dropzonereview");
 		
-	  }});
+		}});
 	  
 	   $("#dropzonedone").droppable({
       drop: function( event, ui ) {
@@ -76,40 +75,6 @@
 		dropit(ui.draggable,"#dropzonedoing");	 		
 	  }});
 	  
-	  //Fill Drop down menu
-	  /* $.ajax(
-		{
-			type:"GET",
-			dataType: "json",
-			url:"http://localhost/scrum/getiterations.php",
-			
-			success:function(data,status)
-			{			
-//				 alert(data);
-				 data.forEach(function(loc) 
-				 { alert(loc.Name });
-				//var jsonData = JSON.parse(data);
-
-				//$("#json").html(data);
-				//Parse a JSON ARRAY
-			
-				/*for (var i=0; i<data.length; i++)
-					for (var name in data[i]) 
-					{
-						
-                
-						//$(".dropdown-menu").append("<li><a href='#'>TOM</a></li>");
-					}*/
-				//}	
-	
-	
-  		/*	},
-			 error: function (xhr, ajaxOptions, thrownError) {
-				//alert(xhr.status);
-				//alert(thrownError);
-			}
-		});*/
-		
 	  
 	  //DO AJAX TEST CALLS
 	  
@@ -130,7 +95,7 @@
                         /* data will hold the php array as a javascript object */
                         $.each(data, function(key, val) {
                                
-							   $('.dropdown-menu').append("<li> <a href='#'>" + val.Name + "</a></li>");
+							   $('.dropdown-menu').append("<li> <a href='" . val.Id ."'>" + val.Name + "</a></li>");
 								
                
                         });
@@ -236,9 +201,8 @@
 				<div class="panel-body">
 					
 					<div class="drag">
-					<div class="panel panel-warning">User story 1</div>
-					<div class="panel panel-warning">User story 2</div>
-					<div class="panel panel-warning">User story 3</div>
+					
+					<!-- Add draggable components-->
 					</div>
 					
 				</div>
