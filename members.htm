@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<!-- saved from url=(0040)http://getbootstrap.com/examples/navbar/ -->
+<html lang="en"><script id="tinyhippos-injected">if (window.top.ripple) { window.top.ripple("bootstrap").inject(window, document); }</script><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="shortcut icon" href="http://getbootstrap.com/assets/ico/favicon.ico">
+
+    <title>Scrum dashboard</title>
+
+    <!-- Bootstrap core CSS -->
+    <!--<link href="http://getbootstrap.com/dist/css/bootstrap.min.css" rel="stylesheet">-->
+
+    <!-- Custom styles for this template -->
+   <!-- <link href="http://getbootstrap.com/examples/navbar/navbar.css" rel="stylesheet"> -->
+
+	<!--<script type="text/javascript" src="dist/js/bootstrap.min.js"></script>-->
+	
+<script type="text/javascript" src="js\jquery-ui-1.9.2.custom\jquery-ui-1.9.2.custom\js\jquery-1.8.3.js"></script>
+<script type="text/javascript" src="js\jquery-ui-1.9.2.custom\jquery-ui-1.9.2.custom\js\jquery-ui-1.9.2.custom.js"></script>
+<script type="text/javascript" src="js\bootstrap.min.js"></script>
+
+	<!--<script type="text/javascript" src="dist/js/jquery-1.11.0.min.js"></script>-->
+	<link href="css/bootstrap.min.css" rel="stylesheet">
+    <!-- Just for debugging purposes. Don't actually copy this line! -->
+    <!--[if lt IE 9]><script src="../../assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+	  
+	  
+    <![endif]-->
+	
+	<style>
+	
+	.panel-body > div
+	{
+		float:left;
+		margin-left:5px;
+	}
+	
+	</style>
+	
+	<script type="text/javascript">
+	
+	$(document).ready(function()
+	{
+	
+		$(".drag div").draggable({ revert: true });
+	
+	
+	
+	 $("#dropzonetodo").droppable({
+      drop: function( event, ui ) {
+		dropit(ui.draggable,"#dropzonetodo");	 		
+	  }});
+	  
+	   $("#dropzonereview").droppable({
+      drop: function( event, ui ) {
+		dropit(ui.draggable,"#dropzonereview");
+		
+	  }});
+	  
+	   $("#dropzonedone").droppable({
+      drop: function( event, ui ) {
+		dropit(ui.draggable,"#dropzonedone");	 		
+	  }});
+	  
+	   $("#dropzonedoing").droppable({
+      drop: function( event, ui ) {
+	 
+		dropit(ui.draggable,"#dropzonedoing");	 		
+	  }});
+	  
+	  //Fill Drop down menu
+	  /* $.ajax(
+		{
+			type:"GET",
+			dataType: "json",
+			url:"http://localhost/scrum/getiterations.php",
+			
+			success:function(data,status)
+			{			
+//				 alert(data);
+				 data.forEach(function(loc) 
+				 { alert(loc.Name });
+				//var jsonData = JSON.parse(data);
+
+				//$("#json").html(data);
+				//Parse a JSON ARRAY
+			
+				/*for (var i=0; i<data.length; i++)
+					for (var name in data[i]) 
+					{
+						
+                
+						//$(".dropdown-menu").append("<li><a href='#'>TOM</a></li>");
+					}*/
+				//}	
+	
+	
+  		/*	},
+			 error: function (xhr, ajaxOptions, thrownError) {
+				//alert(xhr.status);
+				//alert(thrownError);
+			}
+		});*/
+		
+	  
+	  //DO AJAX TEST CALLS
+	  
+	 
+	 
+	   $.getJSON('getteams.php', function(data) {
+                        /* data will hold the php array as a javascript object */
+                        $.each(data, function(key, val) {
+                               
+							   $('.dropdown-menu').append("<li> <a href='#'>" + val.Name + "</a></li>");
+								
+               
+                        });
+						
+						
+						$('.dropdown-menu a').click(function(e){
+							alert(e.target);
+						});
+						
+                });
+	  
+	});
+	
+	function dropit($item,$zone)
+	{
+	$item.fadeOut(function() {       
+
+			$item.fadeIn(function()
+			{
+			});
+			$($zone).append($item);
+
+		});
+	}
+	</script>
+  </head>
+
+  <body style="">
+
+    <div class="container">
+
+      <!-- Static navbar -->
+      <div class="navbar navbar-default" role="navigation">
+        <div class="container-fluid">
+          <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+              <span class="sr-only">Toggle navigation</span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="http://getbootstrap.com/examples/navbar/#">Scrum Dashboard</a>
+          </div>
+          <div class="navbar-collapse collapse">
+            <ul class="nav navbar-nav">
+              <li class="active"><a href="http://getbootstrap.com/examples/navbar/#">Projects</a></li>
+              <li><a href="http://getbootstrap.com/examples/navbar/#">Members</a></li>
+              <li><a href="http://getbootstrap.com/examples/navbar/#">Newsfeedd</a></li>
+              <li class="dropdown">
+                <a href="http://getbootstrap.com/examples/navbar/#" class="dropdown-toggle" data-toggle="dropdown">Iterations <b class="caret"></b></a>
+                <ul class="dropdown-menu">
+                  <li><a href="http://getbootstrap.com/examples/navbar/#">Backlog</a></li>
+                  <li><a href="http://getbootstrap.com/examples/navbar/#">Sprint 1</a></li>
+                  <li><a href="http://getbootstrap.com/examples/navbar/#">Sprint 2</a></li>
+                  <li class="divider"></li>
+                  <li class="dropdown-header">Nav header</li>
+                  <li><a href="http://getbootstrap.com/examples/navbar/#">Separated link</a></li>
+                  <li><a href="http://getbootstrap.com/examples/navbar/#">One more separated link</a></li>
+                </ul>
+              </li>
+            </ul>
+            <ul class="nav navbar-nav navbar-right">
+              <li class="active"><a href="./Navbar Template for Bootstrap_files/Navbar Template for Bootstrap.htm">Default</a></li>
+              <li><a href="http://getbootstrap.com/examples/navbar-static-top/">Static top</a></li>
+              <li><a href="http://getbootstrap.com/examples/navbar-fixed-top/">Fixed top</a></li>
+            </ul>
+          </div><!--/.nav-collapse -->
+        </div><!--/.container-fluid -->
+      </div>
+
+      <!-- Main component for a primary marketing message or call to action -->
+      <div class="jumbotron">
+        
+		<div class="panel panel-default">
+			<div class="panel-heading">Scrumboard dashboard</div>
+			
+			<!--Choose iteration-->
+		
+		<div class="navbar-collapse collapse">
+          <ul class="nav navbar-nav">
+          
+            <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown">Teams <b class="caret"></b></a>
+              <ul class="dropdown-menu">
+               
+              </ul>
+            </li>
+          </ul>
+         
+        </div><!--/.nav-collapse -->
+		
+		
+			<!--End choose iteration-->
+			
+			<div class="panel-body">
+			<!-- todo doing reviewing done -->
+			
+			
+			
+			
+			
+				<div class="panel panel-primary" id="dropzonetodo" style="width:40%">
+				
+				<div class="panel-heading">
+					<h3 class="panel-title">Backlog</h3>
+				</div>
+				<div class="panel-body">
+					
+					<div class="drag">
+					<div class="panel panel-warning">User story 1</div>
+					<div class="panel panel-warning">User story 2</div>
+					<div class="panel panel-warning">User story 3</div>
+					</div>
+					
+				</div>
+				</div>
+				
+				<div class="panel panel-primary" id="dropzonedoing" style="width:40%">
+				
+				<div class="panel-heading">
+					<h3 class="panel-title">Doing</h3>
+				</div>
+				<div class="panel-body">
+					
+				</div>
+				</div>
+				
+				
+				
+				
+				
+				
+			
+			</div>
+		</div>
+		
+      </div>
+	  
+	<div class="panel panel-primary">
+		<div class="panel-heading">
+			<h3 class="panel-title">Panel title</h3>
+		</div>
+		<div class="panel-body">
+			Panel content
+		</div>
+	</div>
+<div class="panel panel-success">
+<div class="panel-heading">
+			<h3 class="panel-title">Panel title</h3>
+		</div>
+		<div class="panel-body">
+			Panel content
+		</div>
+</div>
+<div class="panel panel-info">
+<div class="panel-heading">
+			<h3 class="panel-title">Panel title</h3>
+		</div>
+		<div class="panel-body">
+			Panel content
+		</div>
+</div>
+<div class="panel panel-warning">...</div>
+<div class="panel panel-danger" id="json">...</div>
+
+    </div> <!-- /container -->
+
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="./Navbar Template for Bootstrap_files/jquery-1.10.2.min.js"></script>
+    <script src="./Navbar Template for Bootstrap_files/bootstrap.min.js"></script>
+  
+
+</body></html>
