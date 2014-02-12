@@ -99,8 +99,9 @@
 						for (var key in json) {
 							if (json.hasOwnProperty(key)) {
 								var item = json[key];
-								$('.dropdown-menu').append("<li> <a href='#' onclick='SelectTeam(".item.Id.")'>" + item.Name + "</a></li>");
-							}
+								alert(item.Id);
+alert(item.Name);								
+								}
 						}
 						/*$.each(data, function(key, val) {
                                 $.each(val, function (i, d) {
