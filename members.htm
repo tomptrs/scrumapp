@@ -95,8 +95,11 @@
 	   $.getJSON('getteams.php', function(data) {
                         /* data will hold the php array as a javascript object */
                         $.each(data, function(key, val) {
-                               
-							   $('.dropdown-menu').append("<li> <a href='#' onclick='SelectTeam(".val.Id.")'>" + val.Name + "</a></li>");
+                                $.each(val, function (i, d) {
+									alert(d);
+    })
+							   
+							   //$('.dropdown-menu').append("<li> <a href='#' onclick='SelectTeam(".val.Id.")'>" + val.Name + "</a></li>");
 								
                
                         });
