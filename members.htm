@@ -100,7 +100,7 @@
 							if (json.hasOwnProperty(key)) {
 									var item = json[key];
 									//alert(item.Id); alert(item.Name); 	
-									$('.dropdown-menu').append("<li> <a href='#'>" + item.Name + "</a></li>");
+									$('.dropdown-menu').append("<li> <a href='#' onclick='selectteam("+item.Id+")'>" + item.Name + "</a></li>");
 						}
 						}
 						/*$.each(data, function(key, val) {
@@ -135,6 +135,11 @@
 			$($zone).append($item);
 
 		});
+		
+		function selectteam(id)
+		{
+			alert(id);
+		}
 	}
 	</script>
   </head>
