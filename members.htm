@@ -100,7 +100,7 @@
 							if (json.hasOwnProperty(key)) {
 									var item = json[key];
 									//alert(item.Id); alert(item.Name); 	
-									$('.dropdown-menu').append("<li> <a href='#' onclick='selectteam("+item.Id+")'>" + item.Name + "</a></li>");
+									$('.dropdown-menu').append("<li> <a href='#' onclick='selectteam("+item.Id+ "," + item.Name +")'>" + item.Name + "</a></li>");
 						}
 						}
 						/*$.each(data, function(key, val) {
@@ -137,10 +137,13 @@
 		});		
 	}
 	
-	function selectteam(id)
+	function selectteam(id,name)
 		{
-			alert(id);
+			seletectedTeam = id;
+			$("#team-name").html(name);
 		}
+		
+		var selectedTeam;
 	</script>
   </head>
 
@@ -232,7 +235,7 @@
 				<div class="panel panel-primary" id="dropzonedoing" style="width:40%">
 				
 				<div class="panel-heading">
-					<h3 class="panel-title">Doing</h3>
+					<h3 class="panel-title" id="team-name">Doing</h3>
 				</div>
 				<div class="panel-body">
 					
