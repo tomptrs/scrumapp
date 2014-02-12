@@ -109,10 +109,11 @@
 								alert(data[i][j]);
 							}
 						}*/
-						 for (key in data) {
-          $.each(data[key], function(k, arrayItem) {
-            alert(arrayItem.Id);
-          });
+						 json= data;
+for (var key in json) {
+    if (json.hasOwnProperty(key)) {
+    var item = json[key];
+    alert(item.Id); }}
         }
 						
 						
