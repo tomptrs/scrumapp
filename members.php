@@ -30,43 +30,24 @@ class Member
 	
 	}
 	
-	public function GetData()
+	public function GetMembers()
 	{
-		//$sql = "SELECT * FROM Member";
-		//$this->db->query($sql);		
+		$sql = "SELECT * FROM Member";
+		$this->db->query($sql);		
 		
 		$json = array();
 		$teller = 0;
-		//while ($line = $this->db->fetchArray() )
-		//{
+		while ($line = $this->db->fetchArray() )
+		{
 			$json[$teller] = array(	"Id" => 1,
 									"Name" => "Peeters",
 									"FirstName" => "Tom",
 									"Email" => "tom.peeters@ap.be"
 									);
 			$teller++;
-		
+		}		
 			
-		//}
-		
-			//print $json[0];
-		//	return json_encode($json);	
-	//$arr = array('a' => 1, 'b' => 2, 'c' => 3, 'd' => 4, 'e' => 5);
-	$arr = array(
-    array(
-        "region" => "valore",
-        "price" => "valore2"
-    ),
-    array(
-        "region" => "valore",
-        "price" => "valore2"
-    ),
-    array(
-        "region" => "valore",
-        "price" => "valore2"
-    )
-);
-	return $json;
+		return $json;
 	}
 	
 	public function InsertUserInDB($name)

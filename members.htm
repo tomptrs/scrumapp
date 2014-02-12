@@ -113,6 +113,23 @@
 	  
 	  //DO AJAX TEST CALLS
 	  
+	   $.getJSON('getmembers.php', function(data) {
+                        /* data will hold the php array as a javascript object */
+                        $.each(data, function(key, val) {
+                               
+							   //$('.dropdown-menu').append("<li> <a href='#'>" + val.Name val.FirstName + "</a></li>");
+							   //<div class="panel panel-warning">User story 1</div>
+							   $(".drag").append('<div class="panel panel-warning">' + val.Name val.FirstName +'</div>');
+								
+               
+                        });
+						
+						
+						$('.dropdown-menu a').click(function(e){
+							alert(e.target);
+						});
+						
+                });
 	 
 	 
 	   $.getJSON('getteams.php', function(data) {
@@ -217,14 +234,10 @@
 			<div class="panel-body">
 			<!-- todo doing reviewing done -->
 			
-			
-			
-			
-			
 				<div class="panel panel-primary" id="dropzonetodo" style="width:40%">
 				
 				<div class="panel-heading">
-					<h3 class="panel-title">Backlog</h3>
+					<h3 class="panel-title">Members</h3>
 				</div>
 				<div class="panel-body">
 					
