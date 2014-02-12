@@ -75,6 +75,7 @@
 		dropit(ui.draggable,"#dropzonedoing");	 		
 	  }});
 	  
+	 	
 	  
 	  //DO AJAX TEST CALLS
 	  
@@ -95,7 +96,7 @@
                         /* data will hold the php array as a javascript object */
                         $.each(data, function(key, val) {
                                
-							   $('.dropdown-menu').append("<li> <a href='" . val.Id ."'>" + val.Name + "</a></li>");
+							   $('.dropdown-menu').append("<li> <a href='#' onclick='SelectTeam(".val.Id.")'>" + val.Name + "</a></li>");
 								
                
                         });
