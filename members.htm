@@ -117,12 +117,11 @@
                         /* data will hold the php array as a javascript object */
                         $.each(data, function(key, val) {
                                
-							   //$('.dropdown-menu').append("<li> <a href='#'>" + val.Name val.FirstName + "</a></li>");
-							   //<div class="panel panel-warning">User story 1</div>
-							  // $(".drag").append('<div class="panel panel-warning">' + val.Name val.FirstName +'</div>');
 								$(".drag").append("<div class='panel panel-warning'>" + val.Name + "</div>" );
                
                         });
+						
+						$(".drag div").draggable({ revert: true });
 						
                 });
 	 
