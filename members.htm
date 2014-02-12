@@ -46,15 +46,7 @@
 	</style>
 	
 	<script type="text/javascript">
-
-	function selectteam(id,name)
-		{
-		alert();
-			seletectedTeam = id;
-			alert(name);
-//			$("#team-name").html(name);
-		}
-		
+	
 	$(document).ready(function()
 	{
 	
@@ -108,7 +100,7 @@
 							if (json.hasOwnProperty(key)) {
 									var item = json[key];
 									//alert(item.Id); alert(item.Name); 	
-									$('.dropdown-menu').append("<li> <a href='#' onclick='selectteam("+item.Id+ ",/'" + item.Name +"/')'>" + item.Name + "</a></li>");
+									$('.dropdown-menu').append("<li> <a href='#' onclick='selectteam("+item.Id+ ",/'" + item.Name +")'>" + item.Name + "</a></li>");
 						}
 						}
 						/*$.each(data, function(key, val) {
@@ -145,9 +137,15 @@
 		});		
 	}
 	
-
+	var selectedTeam="";
+	function selectteam(id,name)
+		{
+			//seletectedTeam = id;
+			alert(name);
+//			$("#team-name").html(name);
+		}
 		
-		var selectedTeam;
+		
 	</script>
   </head>
 
