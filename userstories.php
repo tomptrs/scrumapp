@@ -12,7 +12,7 @@ class UserStory
 		$this->db = new Databank();		
 	}
 	
-	public function GetData()
+	public function GetStories()
 	{
 		$sql = "SELECT * FROM UserStory";
 		$this->db->query($sql);		
