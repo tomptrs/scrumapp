@@ -16,7 +16,7 @@ if( isset($_GET["id"])  && isset($_GET["status"]))
 	$m = new UserStory();			
 	$m->UpdateUserStory($v,$status);
 
-
+print $v;
 
 }
 
