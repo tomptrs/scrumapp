@@ -47,7 +47,7 @@
 	<script type="text/javascript">
 	function ChangeStatus(myid,mystatus)
 	{
-	alert( myid +" " + mystatus);
+	
 		$.ajax(
 		{
 			type:"GET",
@@ -55,7 +55,8 @@
 			data: {id: myid, status: mystatus},
 			
 			success:function(data,status)
-			{			
+			{		
+				//change color of user story panel
 			},
 			 error: function (xhr, ajaxOptions, thrownError) {
 			}
@@ -72,25 +73,27 @@
 	
 	 $("#dropzonetodo").droppable({
       drop: function( event, ui ) {
-		
+		ChangeStatus(ui.draggable.attr("attrId"),1)
 		dropit(ui.draggable,"#dropzonetodo");	 		
 	  }});
 	  
 	   $("#dropzonereview").droppable({
       drop: function( event, ui ) {
+	  ChangeStatus(ui.draggable.attr("attrId"),3)
 		dropit(ui.draggable,"#dropzonereview");
 		
 	  }});
 	  
 	   $("#dropzonedone").droppable({
       drop: function( event, ui ) {
+	  ChangeStatus(ui.draggable.attr("attrId"),4)
 		dropit(ui.draggable,"#dropzonedone");	 		
 	  }});
 	  
 	   $("#dropzonedoing").droppable({
       drop: function( event, ui ) {
 		//alert(ui.draggable.attr("attrId"));
-		ChangeStatus(ui.draggable.attr("attrId"),77)
+		ChangeStatus(ui.draggable.attr("attrId"),2)
 		dropit(ui.draggable,"#dropzonedoing");	 		
 	  }});
 	  
