@@ -106,7 +106,85 @@
         
 		
 		
-		
+		 <form method="POST" id="addStoryForm" >
+      
+      <textarea id="id_summary" rows="1" cols="50" name="summary" maxlength="5000"></textarea>     
+      <button id="add_button" type="submit" class="btn">Add Story</button>      
+      <button id="add_button_saving" disabled="disabled" class="hidden btn disabled">Saving...</button>
+      <!-- <INPUT TYPE="Submit">Add Story</input>--><!--SRC="/site_media/static/images/addStoryButton.png"-->
+      <br />
+
+      <div id="story_details">
+        <table id="add_story_table">
+          <tr><td>Detail:</td><td><textarea id="id_detail" rows="10" cols="40" name="detail" maxlength="5000"></textarea>     </td></tr>
+          <tr><td>Tags:</td><td><div class="tag_holder"><input type="text" name="tags" id="id_tags" /></div>  </td></tr>
+          <tr><td>Points:&nbsp;</td><td id="points_section"><ul>
+<li><label for="id_points_0"><input checked="checked" type="radio" id="id_points_0" value="?" name="points" /> ?</label></li>
+<li><label for="id_points_1"><input type="radio" id="id_points_1" value="0" name="points" /> 0</label></li>
+<li><label for="id_points_2"><input type="radio" id="id_points_2" value="0.5" name="points" /> 0.5</label></li>
+<li><label for="id_points_3"><input type="radio" id="id_points_3" value="1" name="points" /> 1</label></li>
+<li><label for="id_points_4"><input type="radio" id="id_points_4" value="2" name="points" /> 2</label></li>
+<li><label for="id_points_5"><input type="radio" id="id_points_5" value="3" name="points" /> 3</label></li>
+<li><label for="id_points_6"><input type="radio" id="id_points_6" value="5" name="points" /> 5</label></li>
+<li><label for="id_points_7"><input type="radio" id="id_points_7" value="8" name="points" /> 8</label></li>
+<li><label for="id_points_8"><input type="radio" id="id_points_8" value="13" name="points" /> 13</label></li>
+<li><label for="id_points_9"><input type="radio" id="id_points_9" value="20" name="points" /> 20</label></li>
+<li><label for="id_points_10"><input type="radio" id="id_points_10" value="40" name="points" /> 40</label></li>
+<li><label for="id_points_11"><input type="radio" id="id_points_11" value="100" name="points" /> 100</label></li>
+<li><label for="id_points_12"><input type="radio" id="id_points_12" value="Inf" name="points" /> Infinite</label></li>
+</ul>   </td></tr>
+          <tr><td>Estimate</td><td id="estimate_section"><input type="text" name="estimated_minutes_0" value="0" id="id_estimated_minutes_0" />:<input type="text" name="estimated_minutes_1" value="00" id="id_estimated_minutes_1" /> (HH:MM)   </td></tr>
+
+
+
+          
+            <tr><td>Assigned To:&nbsp;</td><td><div class="tag_holder"><input type="text" name="assignee" id="id_assignee" /></div>   </td></tr>
+          
+          <tr class="rank-slider-row">
+            <td>Story&nbsp;Rank:&nbsp;</td>
+            <!-- <td id="general-rank-cell"><ul>
+<li><label for="id_general_rank_0"><input type="radio" id="id_general_rank_0" value="0" name="general_rank" /> Top</label></li>
+<li><label for="id_general_rank_1"><input type="radio" id="id_general_rank_1" value="1" name="general_rank" /> Middle</label></li>
+<li><label for="id_general_rank_2"><input checked="checked" type="radio" id="id_general_rank_2" value="2" name="general_rank" /> Bottom</label></li>
+</ul>   </td> -->
+            <td>
+              <b>Top</b> <div class="rank-slider"></div> <b>Bottom</b><br/>
+              <i>You can drag your story up or down in story list after you create it to modify rank.</i>
+              <br/><br/>
+            </td>
+          </tr>
+
+		    <tr>
+			  <td>Epic:&nbsp;</td>
+			  <td> 
+				 <select name="epic" id="id_epic">
+<option value="" selected="selected">----------</option>
+</select>
+			  </td>
+		   </tr>
+
+          
+
+           
+           <tr><td>Iteration:&nbsp;</td><td><select name="iteration" id="id_iteration">
+<option value="86618">Orienteering APP / Backlog</option>
+</select>   </td></tr>
+           
+
+           
+
+          
+          
+          
+         </table>
+		Tip: Format your story summary and detail with MarkDown - <a href="http://support.scrumdo.com/kb/faq/formatting-text" target="_blank">More info</a>
+      </div>
+    
+        <input type="hidden" name="action" value="addStory" />
+    
+
+    
+    </form>
 		
 		
 
