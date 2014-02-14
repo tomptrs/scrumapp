@@ -124,17 +124,17 @@
     Panel content
   </div>
 							   */
-							   alert(val.Id);
-							   if(val.Id == 1)
+							   //alert(val.Id);
+							   if(val.Status == 1)
 								//$("div[attrWhat='todo']").append("<div action='drag' attrId='"+val.Id+"' class='panel panel-warning'>"+val.Title+"</div>");
 								$("div[attrWhat='todo']").append("<div action='drag' attrId='"+val.Id+"' class='panel panel-info'> <div class='panel-heading'>"+val.Title+"</div> <div class='panel-body'>"+val.Description+"</div></div>");
-								else if(val.Id == 2)
+								else if(val.Status == 2)
 								//$("div[attrWhat='doing']").append("<div action='drag' attrId='"+val.Id+"' class='panel panel-warning'>"+val.Title+"</div>");
 								$("div[attrWhat='doing']").append("<div action='drag' attrId='"+val.Id+"' class='panel panel-warning'> <div class='panel-heading'>"+val.Title+"</div> <div class='panel-body'>"+val.Description+"</div></div>");
-								else if(val.Id == 3)
+								else if(val.Status == 3)
 								//$("div[attrWhat='review']").append("<div action='drag' attrId='"+val.Id+"' class='panel panel-warning'>"+val.Title+"</div>");
 								$("div[attrWhat='review']").append("<div action='drag' attrId='"+val.Id+"' class='panel panel-danger'> <div class='panel-heading'>"+val.Title+"</div> <div class='panel-body'>"+val.Description+"</div></div>");
-								else if(val.Id == 4)
+								else if(val.Status == 4)
 								//$("div[attrWhat='done']").append("<div action='drag' attrId='"+val.Id+"' class='panel panel-warning'>"+val.Title+"</div>");
 								$("div[attrWhat='done']").append("<div action='drag' attrId='"+val.Id+"' class='panel panel-success'> <div class='panel-heading'>"+val.Title+"</div> <div class='panel-body'>"+val.Description+"</div></div>");
 							  
