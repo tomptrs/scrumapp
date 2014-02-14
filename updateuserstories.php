@@ -4,10 +4,10 @@ require_once "userstories.php";
 
 $id ,$status;
 
-if( isset($_POST["id"]) && isset($_POST["status"]))
+if( isset($_GET["id"]) && isset($_GET["status"]))
 {
-	$id = $_POST["id"];
-	$status = $_POST["status"];
+	$id = $_GET["id"];
+	$status = $_GET["status"];
 }
 
 $m = new UserStory();			
