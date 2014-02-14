@@ -85,10 +85,16 @@
                         /* data will hold the php array as a javascript object */
                         $.each(data, function(key, val) {
                                
-							   $("div[attrWhat='todo']").append("<div attrId='"+val.Id+"' class='panel panel-warning'>"+val.Title+"</div>");
-							   //$('.dropdown-menu').append("<li> <a href='#'>" + val.Name + "</a></li>");
-								//$( "input[value='Hot Fuzz']" )
-               //<div attrId="12345" class="panel panel-warning">User story 1</div>
+							   if(val.Id == 1)
+								$("div[attrWhat='todo']").append("<div attrId='"+val.Id+"' class='panel panel-warning'>"+val.Title+"</div>");
+							  else if(val.Id == 2)
+								$("div[attrWhat='doing']").append("<div attrId='"+val.Id+"' class='panel panel-warning'>"+val.Title+"</div>");
+								else if(val.Id == 3)
+								$("div[attrWhat='review']").append("<div attrId='"+val.Id+"' class='panel panel-warning'>"+val.Title+"</div>");
+								else if(val.Id == 4)
+								$("div[attrWhat='done']").append("<div attrId='"+val.Id+"' class='panel panel-warning'>"+val.Title+"</div>");
+								
+							  
                         });
 						
 						
