@@ -77,6 +77,31 @@
 	  }});
 	  
 	  
+	  /*
+		Start updating userstories into UI panels
+	  */
+	  
+	    $.getJSON('getuserstories.php', function(data) {
+                        /* data will hold the php array as a javascript object */
+                        $.each(data, function(key, val) {
+                               
+							   $(".drag").append("<div attrId='"+val.Id+"' class='panel panel-warning'>"+val.Title+"</div>");
+							   //$('.dropdown-menu').append("<li> <a href='#'>" + val.Name + "</a></li>");
+								
+               //<div attrId="12345" class="panel panel-warning">User story 1</div>
+                        });
+						
+						
+						$('.dropdown-menu a').click(function(e){
+							alert(e.target);
+						});
+						
+                });
+	  
+	  /*
+		END Updating User Stories
+	  */
+	  
 	  
 	  //DO AJAX TEST CALLS
 	  
@@ -182,7 +207,7 @@
 				</div>
 				<div class="panel-body">
 					
-					<div class="drag">
+					<div class="drag" attrWhat="todo">
 					<div attrId="12345" class="panel panel-warning">User story 1</div>
 					<div class="panel panel-warning">User story 2</div>
 					<div class="panel panel-warning">User story 3</div>
