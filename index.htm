@@ -72,7 +72,7 @@
 	  
 	   $("#dropzonedoing").droppable({
       drop: function( event, ui ) {
-		alert(ui.draggable);
+		alert(ui.draggable.attr("attrId"));
 		dropit(ui.draggable,"#dropzonedoing");	 		
 	  }});
 	  
@@ -183,7 +183,7 @@
 				<div class="panel-body">
 					
 					<div class="drag">
-					<div class="panel panel-warning">User story 1</div>
+					<div attrId="1" class="panel panel-warning">User story 1</div>
 					<div class="panel panel-warning">User story 2</div>
 					<div class="panel panel-warning">User story 3</div>
 					</div>
