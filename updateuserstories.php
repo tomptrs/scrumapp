@@ -10,9 +10,9 @@ $status = 444;
 if( isset($_GET["id"])  && isset($_GET["status"]))
 {
 	$v = $_GET["id"];
-	print $v;
+	//print $v;
 	$status = $_GET["status"];
-		print $status;	
+		//print $status;	
 	$m = new UserStory();			
 	$m->UpdateUserStory($v,$status);
 
