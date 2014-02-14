@@ -49,7 +49,7 @@
 	$(document).ready(function()
 	{
 	
-		$(".drag div").draggable({ revert: true });
+		//$(".drag div").draggable({ revert: true });
 	
 	
 	
@@ -86,19 +86,19 @@
                         $.each(data, function(key, val) {
                                
 							   if(val.Id == 1)
-								$("div[attrWhat='todo']").append("<div attrId='"+val.Id+"' class='panel panel-warning'>"+val.Title+"</div>");
+								$("div[attrWhat='todo']").append("<div action='drag' attrId='"+val.Id+"' class='panel panel-warning'>"+val.Title+"</div>");
 							  else if(val.Id == 2)
-								$("div[attrWhat='doing']").append("<div attrId='"+val.Id+"' class='panel panel-warning'>"+val.Title+"</div>");
+								$("div[attrWhat='doing']").append("<div action='drag' attrId='"+val.Id+"' class='panel panel-warning'>"+val.Title+"</div>");
 								else if(val.Id == 3)
-								$("div[attrWhat='review']").append("<div attrId='"+val.Id+"' class='panel panel-warning'>"+val.Title+"</div>");
+								$("div[attrWhat='review']").append("<div action='drag' attrId='"+val.Id+"' class='panel panel-warning'>"+val.Title+"</div>");
 								else if(val.Id == 4)
-								$("div[attrWhat='done']").append("<div attrId='"+val.Id+"' class='panel panel-warning'>"+val.Title+"</div>");
+								$("div[attrWhat='done']").append("<div action='drag' attrId='"+val.Id+"' class='panel panel-warning'>"+val.Title+"</div>");
 								
 							  
                         });
 						
 						
-						$(".drag div").draggable({ revert: true });
+						$("div[action='drag']").draggable({ revert: true });
 						
                 });
 	  
@@ -211,7 +211,7 @@
 				</div>
 				<div class="panel-body">
 					
-					<div class="drag" attrWhat="todo">
+					<div  attrWhat="todo">
 					<div attrId="12345" class="panel panel-warning">User story 1</div>
 					<div class="panel panel-warning">User story 2</div>
 					<div class="panel panel-warning">User story 3</div>
@@ -227,7 +227,7 @@
 				</div>
 				<div class="panel-body">
 					
-					<div class="drag" attrWhat="doing">
+					<div  attrWhat="doing">
 					
 					</div>
 					
@@ -241,7 +241,7 @@
 				</div>
 				<div class="panel-body">
 					
-					<div class="drag" attrWhat="review">
+					<div  attrWhat="review">
 					
 					</div>
 					
@@ -255,7 +255,7 @@
 				</div>
 				<div class="panel-body">
 				
-				<div class="drag" attrWhat="done">
+				<div  attrWhat="done">
 					<div class="panel panel-primary">
   <div class="panel-heading">
     <h3 class="panel-title">Test User Story</h3>
