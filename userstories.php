@@ -18,13 +18,23 @@ class UserStory
 		$this->db->query($sql);		
 		
 		$json = array();
+		$teller = 0;
+		/*	
+Id
+Title
+Description
+StatusId
+*/
 		while ($line = $this->db->fetchArray() )
 		{
-			$json[] = $line;
-			
+			$json[$teller] = array(	"Id" => $line[0],
+									"Title" => $line[1],
+									"Description" => $line[2],
+									"Status" => $line[3]
+									);
+			$teller++;
 		}
-			
-			return json_encode($json);	
+		return $json;
 
 	}
 	
