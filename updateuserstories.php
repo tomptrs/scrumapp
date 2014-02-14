@@ -12,8 +12,8 @@ print $_GET["id"];
 
 //if( isset($_GET["id"]) )// && isset($_GET["status"]))
 //{
-	$v = $_GET["id"];
-	print $v;
+	//$v = $_GET["id"];
+	//print $v;
 //	$status = $_GET["status"];
 //	print $status;
 //}
