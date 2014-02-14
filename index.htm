@@ -55,6 +55,7 @@
 	
 	 $("#dropzonetodo").droppable({
       drop: function( event, ui ) {
+		
 		dropit(ui.draggable,"#dropzonetodo");	 		
 	  }});
 	  
@@ -71,7 +72,7 @@
 	  
 	   $("#dropzonedoing").droppable({
       drop: function( event, ui ) {
-	 
+		alert(this);
 		dropit(ui.draggable,"#dropzonedoing");	 		
 	  }});
 	  

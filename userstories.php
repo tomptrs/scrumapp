@@ -23,9 +23,19 @@ class UserStory
 			$json[] = $line;
 			
 		}
-			//print $json[0];
+			
 			return json_encode($json);	
 
+	}
+	
+	public function UpdateUserStory($id,$newStatus)
+	{
+		/*
+			UPDATE  `scrum`.`UserStory` SET  `StatusId` =  '2' WHERE  `UserStory`.`Id` =1;
+		*/
+		$sql = "update UserStory set StatusId = '" . $newStatus . "' where Id = '" . $id ."'";
+		$this->db->query($sql);
+	
 	}
 	
 	public function InsertUserInDB($name)
