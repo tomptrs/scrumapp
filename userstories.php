@@ -43,8 +43,9 @@ StatusId
 		/*
 			UPDATE  `scrum`.`UserStory` SET  `StatusId` =  '2' WHERE  `UserStory`.`Id` =1;
 		*/
-		//$sql = "update UserStory set StatusId = '" . $newStatus . "' where Id = '" . $id ."'";
-		//$this->db->query($sql);
+		$sql = "update UserStory set StatusId = '" . $newStatus . "' where Id = '" . $id ."'";
+		print $sql;
+		$this->db->query($sql);
 	
 	}
 	
