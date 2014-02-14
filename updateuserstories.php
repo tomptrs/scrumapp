@@ -1,9 +1,9 @@
 <?php
-print "test";
+
 
 //require_once "userstories.php";
 
-$id ,$status;
+
 print "test";
 print $_GET["id"];
 
