@@ -50,7 +50,8 @@
 	{
 	
 		//$(".drag div").draggable({ revert: true });
-	
+		//for testing
+	$("div[action='drag']").draggable({ revert: true });
 	
 	
 	 $("#dropzonetodo").droppable({
@@ -87,7 +88,7 @@
                                
 							   if(val.Id == 1)
 								$("div[attrWhat='todo']").append("<div action='drag' attrId='"+val.Id+"' class='panel panel-warning'>"+val.Title+"</div>");
-							  else if(val.Id == 2)
+								else if(val.Id == 2)
 								$("div[attrWhat='doing']").append("<div action='drag' attrId='"+val.Id+"' class='panel panel-warning'>"+val.Title+"</div>");
 								else if(val.Id == 3)
 								$("div[attrWhat='review']").append("<div action='drag' attrId='"+val.Id+"' class='panel panel-warning'>"+val.Title+"</div>");
