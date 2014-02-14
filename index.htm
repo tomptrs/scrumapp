@@ -45,6 +45,21 @@
 	</style>
 	
 	<script type="text/javascript">
+	function ChangeStatus(myid,mystatus)
+	{
+		$.ajax(
+		{
+			type:"POST",
+			url:"http://localhost/scrum/updateuserstories.php",
+			data: {id: myid, status: mystatus},
+			
+			success:function(data,status)
+			{			
+			},
+			 error: function (xhr, ajaxOptions, thrownError) {
+			}
+		});
+	}
 	
 	$(document).ready(function()
 	{
@@ -73,7 +88,8 @@
 	  
 	   $("#dropzonedoing").droppable({
       drop: function( event, ui ) {
-		alert(ui.draggable.attr("attrId"));
+		//alert(ui.draggable.attr("attrId"));
+		ChangeStatus(ui.draggable.attr("attrId"),4)
 		dropit(ui.draggable,"#dropzonedoing");	 		
 	  }});
 	  
