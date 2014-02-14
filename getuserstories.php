@@ -6,7 +6,7 @@ $m = new UserStory();
 //header('Content-Type: application/json');
 header("Content-type: text/javascript");
 //$json = array();
-$str = $m->GetStoris();
+$str = $m->GetStories();
 
 echo json_encode($str);
 
