@@ -6,6 +6,15 @@
 	print_r($ses->verifyEmailAddress('tom.peeters@ap.be'));
 	
 	 print_r($ses->listVerifiedEmailAddresses());
+	 
+	   $m = new SimpleEmailServiceMessage();
+
+  $m->addTo('tom.peeters@ap.be');
+  $m->setFrom('tom_ptrs@yahoo.com');
+  $m->setSubject('Hello, world!');
+  $m->setMessageFromString('This is the message body.');
+
+  print_r($ses->sendEmail($m));
 	
 	/*	include "aws-sdk-for-php-master\sdk.class.php";
 	
