@@ -1,9 +1,9 @@
 <?php
 	
 	require_once('ses.php');
-	$ses = new SimpleEmailService('AKIAILTXZOTR7G62RPGQ', 'vxbVOYaccxOEsw2d4hy+QbuGfnVm+MRR3BY132yN');
+	//$ses = new SimpleEmailService('AKIAILTXZOTR7G62RPGQ', 'vxbVOYaccxOEsw2d4hy+QbuGfnVm+MRR3BY132yN');
 	
-	print_r($ses->verifyEmailAddress('tom.peeters@ap.be'));
+	//print_r($ses->verifyEmailAddress('tom.peeters@ap.be'));
 	
 	 print_r($ses->listVerifiedEmailAddresses());
 	 
