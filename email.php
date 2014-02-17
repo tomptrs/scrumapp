@@ -1,6 +1,13 @@
 <?php
 	
-	include "aws-sdk-for-php-master\sdk.class.php";
+	require_once('ses.php');
+	$ses = new SimpleEmailService('AKIAILTXZOTR7G62RPGQ', 'vxbVOYaccxOEsw2d4hy+QbuGfnVm+MRR3BY132yN');
+	
+	print_r($ses->verifyEmailAddress('tom.peeters@ap.be'));
+	
+	 print_r($ses->listVerifiedEmailAddresses());
+	
+	/*	include "aws-sdk-for-php-master\sdk.class.php";
 	
 	
 	function amazonSesEmail($to, $subject, $message)
@@ -48,5 +55,6 @@
 	    
 	   // sleep(5);
 	//}
+	*/
 	
 ?>
